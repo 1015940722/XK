@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pro.inter.MessageMapper" >
+  <resultMap id="BaseResultMap" type="pro.model.Message" >
+    <id column="m_id" property="mId" jdbcType="INTEGER" />
+    <result column="m_date" property="mDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="pro.model.Message" extends="BaseResultMap" >
+    <result column="m_content" property="mContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    m_id, m_date
+  </sql>
+  <sql id="Blob_Column_List" >
+    m_content
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from message
+    where m_id = #{mId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from message
+    where m_id = #{mId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="pro.model.Message" >
+    <selectKey resultType="java.lang.Integer" keyProperty="mId" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into message (m_date, m_content)
+    values (now(), #{mContent,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="pro.model.Message" >
+    <selectKey resultType="java.lang.Integer" keyProperty="mId" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into message
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="mDate != null" >
+        m_date,
+      </if>
+      <if test="mContent != null" >
+        m_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="mDate != null" >
+        #{mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mContent != null" >
+        #{mContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="pro.model.Message" >
+    update message
+    <set >
+      <if test="mDate != null" >
+        m_date = #{mDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mContent != null" >
+        m_content = #{mContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where m_id = #{mId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="pro.model.Message" >
+    update message
+    set m_date = #{mDate,jdbcType=TIMESTAMP},
+      m_content = #{mContent,jdbcType=LONGVARCHAR}
+    where m_id = #{mId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pro.model.Message" >
+    update message
+    set m_date = #{mDate,jdbcType=TIMESTAMP}
+    where m_id = #{mId,jdbcType=INTEGER}
+  </update>
+</mapper>

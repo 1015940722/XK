@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  <display-name></display-name>	
+  <welcome-file-list>
+  	<welcome-file>index.htm</welcome-file>
+    
+  </welcome-file-list>
+  <context-param>  
+    <param-name>contextConfigLocation </param-name>  
+    <param-value>/WEB-INF/classes/applicationContext.xml </param-value>  
+  </context-param> 
+  <servlet>
+      <servlet-name>dispatcherServlet</servlet-name>
+      <servlet-class>
+          org.springframework.web.servlet.DispatcherServlet
+      </servlet-class>
+      <init-param>
+          <param-name>contextConfigLocation</param-name>
+          <param-value>/WEB-INF/springmvc.xml</param-value>
+      </init-param>
+      <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>dispatcherServlet</servlet-name>
+     <url-pattern>*.html</url-pattern>
+  </servlet-mapping>
+  <!-- -->
+  
+  <!-- 第二个视图 -->
+   <servlet>
+      <servlet-name>dispatcherServlet2</servlet-name>
+      <servlet-class>
+          org.springframework.web.servlet.DispatcherServlet
+      </servlet-class>
+      <init-param>
+          <param-name>contextConfigLocation</param-name>
+          <param-value>/WEB-INF/springmvc2.xml</param-value>
+      </init-param>
+      <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>dispatcherServlet2</servlet-name>
+      <url-pattern>*.htm</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+ <!--   <filter>
+ <filter-name>UrlRewriteFilter</filter-name>
+ <filter-class>
+ org.tuckey.web.filters.urlrewrite.UrlRewriteFilter
+ </filter-class>
+ <init-param>
+ <param-name>confPath</param-name>
+ <param-value>/WEB-INF/urlrewrite.xml</param-value>
+ </init-param>
+ </filter>
+ <filter-mapping>
+ <filter-name>UrlRewriteFilter</filter-name>
+ <url-pattern>/*</url-pattern>
+ </filter-mapping>
+  -->
+ 
+  <!--  -->
+  <listener>
+      <listener-class>
+          org.springframework.web.context.ContextLoaderListener
+      </listener-class>
+  </listener> 
+  <filter>
+    <filter-name>characterEncodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+        <param-name>encoding</param-name>
+        <param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>  
+   <param-name>forceEncoding</param-name>  
+   <param-value>true</param-value>  
+   </init-param>  
+   </filter>
+   <filter-mapping>
+	 <filter-name>characterEncodingFilter</filter-name>
+     <url-pattern>/*</url-pattern>
+   </filter-mapping>
+   <jsp-config>
+		<taglib>
+			<taglib-uri>core</taglib-uri>
+			<taglib-location>/WEB-INF/c.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>fmt</taglib-uri>
+			<taglib-location>/WEB-INF/fmt.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>fn</taglib-uri>
+			<taglib-location>/WEB-INF/fn.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>sql</taglib-uri>
+			<taglib-location>/WEB-INF/sql.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>x</taglib-uri>
+			<taglib-location>/WEB-INF/x.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+</web-app>

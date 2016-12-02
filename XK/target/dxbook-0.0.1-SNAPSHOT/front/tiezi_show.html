@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+<style>
+*{
+	margin:0px;
+    padding:0px;
+	font-family:微软雅黑;
+	color:#000;
+	margin:0px auto;
+	font-size:12px;
+}
+body{
+	background:#EFEFEF;
+}
+.banner{
+	height:100px;
+	width:100%;
+	background-color:#5e5e5e;
+	
+}
+.content{
+	width:1000px;
+}
+.white{
+	width:1000px;
+	height:20px;
+}
+.content-main{
+	width:960px;
+	min-height:805px;
+}
+.left{
+	width:630px;
+	height:100%;
+	float:left;
+}
+.lefttop{
+	width:630px;
+	height:100px;
+	background:#FFF;
+}
+.topleft{
+	width:5px;
+	height:100px;
+	background:#00AAA9;
+	float:left;
+}
+.topright{
+	width:605px;
+	height:100px;
+	float:right;
+}
+.topcenter{
+	width:20px;
+	height:100px;
+	float:left;
+}
+.left-right-top{
+	width:605px;
+	height:33px;
+	line-height:33px;
+	color:#b5b4b4;
+}
+.left-right-middle{
+	width:605px;
+	height:35px;	
+}
+.left-right-middle-left{
+	width:80px;
+	height:35px;
+	background:#00AAA9;
+	font-size:16px;
+	color:#fff;
+	line-height:35px;
+	text-align:center;
+	float:left;
+}
+.left-right-middle-center{
+	width:8px;
+	height:35px;
+	float:left;
+}
+.left-right-middle-right{
+	width:517px;
+	height:35px;
+	float:right;
+	font-size:20px;
+	color:#000;
+	line-height:35px;
+}
+.left-right-bottom{
+	width:605px;
+	height:32px;
+	line-height:32px;
+	color:#898888;
+}
+.leftmain{
+	width:630px;
+	background:#fff;
+}
+.left-main-top{
+	width:550px;
+	height:20px;
+}
+.left-white{
+	width:630px;
+	height:7px;
+}
+.left-main-text{
+	width:550px;
+	line-height:25px;
+	color:#666666;
+}
+.left-main-white{
+	width:550px;
+	height:100px;
+}
+.left-main-talk{
+	width:600px;
+	font-size:16px;
+	color:#666666;
+}
+.talk{
+	width:550px;
+}
+.talk-round{
+	margin-top:20px;
+	width:550px;
+	height:74px;
+	border-bottom:1px dashed #CDCDCD;
+}
+.talk-image{
+	width:56px;
+	height:57px;
+	float:left;
+}
+.talk-author{
+	float:left;
+	height:12px;
+	line-height:12px;
+	color:#00aaa9;
+}
+.talk-time{
+	margin-left:30px;
+	float:left;
+	height:12px;
+	line-height:12px;
+	color:#c1bfbf;
+}
+.talk-main{
+	float:left;
+	width:469px;
+	height:50px;
+	coor:#000;
+	text-align:left;
+	margin-top:10px;
+}
+.page-say{
+	width:630px;
+	height:35px;
+	margin-top:20px;
+}
+.page{
+	width:335px;
+	height:35px;
+	margin-left:145px;
+	background:#EFEFEF;
+	float:left;
+}
+.say{
+	width:95px;
+	height:35px;
+	float:left;
+	margin-left:17px;
+	background:#00AAA9;
+	color:#fff;
+	line-height:35px;
+	font-size:16px;
+	text-align:center;
+}
+.page-main{
+	height:14px;
+	margin-top:11px;
+}
+.up{
+	width:60px;
+	height:14px;
+	line-height:14px;
+	float:left;
+	margin-left:10px;
+}
+.up a{
+	display:block;
+	width:60px;
+	height:14px;
+	color:#08A9A1;
+	text-decoration:none;
+}
+.up a:hover{
+	text-decoration:underline;
+}
+.page-number{
+	float:left;
+}
+.page-number{
+	width:175px;
+	height:14px;
+	float:left;
+	margin-left:10px;
+}
+.number{
+	width:35px;
+	height:14px;
+	float:left;
+	text-align:center;
+}
+.right{
+	width:310px;
+	float:right;
+}
+.right-top-title{
+	width:310px;
+	height:49px;
+	background:#FFF;
+	float:left;
+}
+.right-top-title-main{
+	width:295px;
+	height:19px;
+	line-height:19px;
+	font-size:19px;
+	font-weight:bold;
+	color:#00aabb;
+	margin-left:15px;
+}
+.tu{
+	float:left;
+	margin-right:15px;
+}
+.aaa li a{
+	float:left;
+	margin-left:1px;
+	display:block;
+	width:154px;
+	height:50px;
+	float:left;
+	margin-left:1px;
+	line-height:50px;
+	margin-top:1px;
+	font-size:16px;
+	text-align:center;
+	background:#fff;
+}
+.aaa li a:hover{
+	background:#00AAA9;
+	color:#FFF;
+}
+.more{
+	width:310px;
+	height:50px;
+	background:#fff;
+	color:#929292;
+	font-size:16px;
+	line-height:50px;
+	text-align:center;
+	float:left;
+	margin-top:1px;
+}
+.remen{
+	width:280px;
+	margin:0px auto;
+	border-top:1px solid #E2E2E2;
+	float:left;
+	margin-left:15px;
+}
+.remen ul{
+	list-style-type:none;
+}
+.remen ul li a{
+	height:38px;
+	color:#333333;
+	line-height:38px;
+	font-size:12px;
+	text-decoration:none;
+	font-weight:normal;
+}
+.remen ul li a:hover{
+	text-decoration:underline;
+}
+</style>
+</head>
+<body>
+	<div class="banner">
+    </div>
+    <div class="content">
+    	<div class="white"></div>
+        <div class="content-main">
+        	<div class="left">
+            	<div class="lefttop">
+                	<div class="topleft">
+                    </div>
+                    <div class="topcenter"></div>
+                    <div class="topright">
+                    	<div class="left-right-top">sadsd>dsadsadas>adsada
+                        </div>
+                        <div class="left-right-middle">
+                        	<div class="left-right-middle-left">Android
+                            </div>
+                            <div class="left-right-middle-center">
+                            </div>
+                            <div class="left-right-middle-right">安定是飒飒打算
+                            </div>
+                        </div>
+                        <div class="left-right-bottom">151515611  15616512121 adsadasdasd sadasdas
+                        </div>
+                    </div>
+                </div>
+                <div class="left-white"></div>
+                <div class="leftmain">
+                	<div class="left-main-top"></div>
+                    <div class="left-main-text">
+                    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大受打击了撒旦萨达萨达as撒打算打算的阿达撒打算萨达萨达阿什顿撒对萨达萨达萨达萨达萨达萨达阿什顿撒对萨达萨达阿什顿萨达阿什顿萨达阿什顿阿什顿萨达萨达萨达萨达萨达as大时代as大师的撒阿什顿是的撒的<br /><br /><br />
+大好时机的萨达阿什顿萨达阿什顿萨达试试打撒大时代萨达萨达萨达萨达萨达萨达as对萨达阿什顿撒贵航股份换句话讲客家话士大夫地方萨达的啊<br /><br /><br />
+的撒旦撒旦撒旦撒旦撒旦法第三方第三方发士大夫打撒发的发 是否的是到底萨达阿什顿萨达萨达萨达阿什顿阿什顿asSA 呼庚呼癸更符合官方很过分<br /><br /><br />
+快放假独守空房绝对是解放碑大事年表健康是否和解读是粉红色的减肥呢暗示了的空间撒旦了aslk
+                    
+                    </div>
+                    <div class="left-main-white"></div>
+                    <div class="left-main-talk">共有X条评论
+                    	<div style="width:550px;height:10px;"></div>
+                    	<div class="talk">
+                        	<div class="talk-round">
+                            	<div class="talk-image"><img src="images/tiezitou.jpg" /></div>
+                                <div style="width:15px;height:74px;float:left;"></div>
+                                <div class="talk-author">xindemeng</div>
+                                <div class="talk-time">12:12:12:12:12</div>
+                                <div class="talk-main">阿斯顿撒大萨达萨达
+                                </div>
+                            </div>
+                            <div class="talk-round">
+                            	<div class="talk-image"><img src="images/tiezitou.jpg" /></div>
+                                <div style="width:15px;height:74px;float:left;"></div>
+                                <div class="talk-author">xindemeng</div>
+                                <div class="talk-time">12:12:12:12:12</div>
+                                <div class="talk-main">阿斯顿撒大萨达萨达
+                                </div>
+                            </div>
+                            <div class="talk-round">
+                            	<div class="talk-image"><img src="images/tiezitou.jpg" /></div>
+                                <div style="width:15px;height:74px;float:left;"></div>
+                                <div class="talk-author">xindemeng</div>
+                                <div class="talk-time">12:12:12:12:12</div>
+                                <div class="talk-main">阿斯顿撒大萨达萨达阿斯顿撒大萨达阿斯顿撒大萨达萨达阿斯顿撒大萨达阿斯顿撒大萨达萨达阿斯顿撒大萨达萨达阿斯顿撒大萨达萨达阿斯顿撒大萨达萨达阿斯顿撒大萨达萨达阿斯顿撒大萨达萨达
+                                </div>
+                            </div>
+                            <div class="talk-round" style="border:0px;">
+                            	<div class="talk-image"><img src="images/tiezitou.jpg" /></div>
+                                <div style="width:15px;height:74px;float:left;"></div>
+                                <div class="talk-author">xindemeng</div>
+                                <div class="talk-time">12:12:12:12:12</div>
+                                <div class="talk-main">阿斯顿撒大萨达萨达
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-say">
+                    	<div class="page">
+                        	<div class="page-main">
+                            	<div class="up">
+                                	<a><img src="images/left.jpg" style="margin-right:10px;float:left;"/>上一页</a>
+                                </div>
+                                <div class="page-number">
+                                	<div class="number">1</div>
+                                    <div class="number">1</div>
+                                    <div class="number">1</div>
+                                    <div class="number">1</div>
+                                    <div class="number">1</div>
+                                </div>
+                                <div class="up">
+                                	<a>下一页<img src="images/right.jpg" style="margin-right:10px;float:right;"/></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="say">评论</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+            	<div class="right-top-title">
+                	<div style="width:310px;height:14px;"></div>
+                	<div class="right-top-title-main"><img src="images/page.jpg" class="tu"/>帖子类型</div>
+                    <div style="width:310px;height:13px;"></div>
+                </div>
+                <ul  class="aaa" style="list-style-type:none;">
+                    <li><a>FDSAD</a></li>
+                    <li><a>FDSAD</a></li>
+                    <li><a>FDSAD</a></li>
+                    <li><a>FDSAD</a></li>
+                    <li><a>FDSAD</a></li>
+                    <li><a>FDSAD</a></li>
+                    <li><a>FDSAD</a></li>
+                    <li><a>FDSAD</a></li>
+                    <li><a>FDSAD</a></li>
+                    <li><a>FDSAD</a></li>
+                 </ul>
+                 <div class="more">查看更多>></div>
+                 <div style="width:310px;height:20px;float:left;"></div>
+                 <div class="right-top-title">
+                	<div style="width:310px;height:14px;"></div>
+                	<div class="right-top-title-main"><img src="images/page.jpg" class="tu"/>热门帖子</div>
+                    <div style="width:310px;height:13px;"></div>
+                </div>
+                <div style="width:310px;background:#fff;float:left;">
+                    <div class="remen">
+                    	<ul>
+                        	<li><a href="#">的撒旦撒旦撒旦撒阿萨德</a></li>
+                            <li><a href="#">的撒旦撒旦撒旦asdsadas撒阿萨德</a></li>
+                            <li><a href="#">的撒旦撒旦撒旦撒阿萨德</a></li>
+                            <li><a href="#">的撒旦撒旦撒旦撒阿萨德</a></li>
+                            <li><a href="#">的撒旦撒旦撒旦撒阿萨德</a></li>
+                            <li><a href="#">的撒旦撒旦撒旦撒阿萨德</a></li>
+                            <li><a href="#">的撒旦撒旦撒旦撒阿萨德</a></li>
+                            <li><a href="#">的撒旦撒旦撒旦撒阿萨德</a></li>
+                            <li><a href="#">的撒旦撒旦撒旦撒阿萨德</a></li>
+                            <li><a href="#">的撒旦撒旦撒旦撒阿萨德</a></li>
+                            <li><a href="#">的撒旦撒旦撒旦撒阿萨德</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="width:310px;height:20px;background:#fff;float:left;"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

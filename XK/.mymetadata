@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="wkjy"
+  id="myeclipse.1404220842551"
+  context-root="/wkjy"
+  j2ee-spec="1.7"
+  archive="wkjy.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

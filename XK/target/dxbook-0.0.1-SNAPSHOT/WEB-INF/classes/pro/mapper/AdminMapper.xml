@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pro.inter.AdminMapper" >
+  <resultMap id="BaseResultMap" type="pro.model.Admin" >
+    <id column="a_id" property="aId" jdbcType="INTEGER" />
+    <result column="a_name" property="aName" jdbcType="VARCHAR" />
+    <result column="a_username" property="aUsername" jdbcType="VARCHAR" />
+    <result column="a_password" property="aPassword" jdbcType="VARCHAR" />
+    <result column="a_rank" property="aRank" jdbcType="INTEGER" />
+    <result column="a_lasttime" property="aLasttime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    a_id, a_name, a_username, a_password, a_rank, a_lasttime
+  </sql>
+  <select id="matchAdmin" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+  	select 
+  	<include refid="Base_Column_List" />
+  	from admin
+  	where a_username=#{aname,jdbcType=VARCHAR} and a_password=#{apassword,jdbcType=VARCHAR}
+  </select>
+  <select id="findAdmin" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from admin
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from admin
+    where a_id = #{aId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="pro.model.Admin" >
+    <selectKey resultType="java.lang.Integer" keyProperty="aId" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into admin (a_name, a_username, a_password, 
+      a_rank, a_lasttime)
+    values (#{aName,jdbcType=VARCHAR}, #{aUsername,jdbcType=VARCHAR}, #{aPassword,jdbcType=VARCHAR}, 
+      #{aRank,jdbcType=INTEGER}, now())
+  </insert>
+  <insert id="insertSelective" parameterType="pro.model.Admin" >
+    <selectKey resultType="java.lang.Integer" keyProperty="aId" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into admin
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="aName != null" >
+        a_name,
+      </if>
+      <if test="aUsername != null" >
+        a_username,
+      </if>
+      <if test="aPassword != null" >
+        a_password,
+      </if>
+      <if test="aRank != null" >
+        a_rank,
+      </if>
+      <if test="aLasttime != null" >
+        a_lasttime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="aName != null" >
+        #{aName,jdbcType=VARCHAR},
+      </if>
+      <if test="aUsername != null" >
+        #{aUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="aPassword != null" >
+        #{aPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="aRank != null" >
+        #{aRank,jdbcType=INTEGER},
+      </if>
+      <if test="aLasttime != null" >
+        #{aLasttime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="pro.model.Admin" >
+    update admin
+    <set >
+      <if test="aName != null" >
+        a_name = #{aName,jdbcType=VARCHAR},
+      </if>
+      <if test="aUsername != null" >
+        a_username = #{aUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="aPassword != null" >
+        a_password = #{aPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="aRank != null" >
+        a_rank = #{aRank,jdbcType=INTEGER},
+      </if>
+      <if test="aLasttime != null" >
+        a_lasttime = #{aLasttime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where a_id = #{aId,jdbcType=INTEGER}
+  </update>
+  <update id="updatetime" parameterType="pro.model.Admin" >
+    update admin
+    set a_lasttime = now()
+    where a_id = #{aid,jdbcType=INTEGER}
+  </update>
+</mapper>

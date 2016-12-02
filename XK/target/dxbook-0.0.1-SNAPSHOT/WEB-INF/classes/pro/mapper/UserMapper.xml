@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pro.inter.UserMapper" >
+  <resultMap id="BaseResultMap" type="pro.model.User" >
+    <id column="u_id" property="uId" jdbcType="INTEGER" />
+    <result column="u_name" property="uName" jdbcType="VARCHAR" />
+    <result column="u_username" property="uUsername" jdbcType="VARCHAR" />
+    <result column="u_password" property="uPassword" jdbcType="VARCHAR" />
+    <result column="u_image" property="uImage" jdbcType="VARCHAR" />
+    <result column="u_integral" property="uIntegral" jdbcType="INTEGER" />
+    <result column="u_email" property="uEmail" jdbcType="VARCHAR" />
+    <result column="u_sum" property="uSum" jdbcType="INTEGER" />
+    <result column="u_rank" property="uRank" jdbcType="INTEGER" />
+    <result column="group_id" property="groupId" jdbcType="INTEGER" />
+    <result column="u_date" property="uDate" jdbcType="TIMESTAMP" />
+    <result column="u_content" property="uContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    u_id, u_name, u_username, u_password, u_image, u_integral, u_email, u_sum, u_rank, 
+    group_id, u_date,u_content
+  </sql>
+  <select id="findall" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    limit #{startline,jdbcType=INTEGER},#{pagesize,jdbcType=INTEGER}
+  </select>
+  <select id="getCount" resultType="java.lang.Integer">
+  	select count(*) from user
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user
+    where u_id = #{uId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="pro.model.User" >
+    <selectKey resultType="java.lang.Integer" keyProperty="uId" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into user (u_name, u_username, u_password, 
+      u_image, u_integral, u_email, 
+      u_sum, u_rank, group_id, 
+      u_date, u_content)
+    values (#{uName,jdbcType=VARCHAR}, #{uUsername,jdbcType=VARCHAR}, #{uPassword,jdbcType=VARCHAR}, 
+      #{uImage,jdbcType=VARCHAR}, #{uIntegral,jdbcType=INTEGER}, #{uEmail,jdbcType=VARCHAR}, 
+      #{uSum,jdbcType=INTEGER}, #{uRank,jdbcType=INTEGER}, #{groupId,jdbcType=INTEGER}, 
+      #{uDate,jdbcType=TIMESTAMP}, #{uContent,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="pro.model.User" >
+    <selectKey resultType="java.lang.Integer" keyProperty="uId" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="uName != null" >
+        u_name,
+      </if>
+      <if test="uUsername != null" >
+        u_username,
+      </if>
+      <if test="uPassword != null" >
+        u_password,
+      </if>
+      <if test="uImage != null" >
+        u_image,
+      </if>
+      <if test="uIntegral != null" >
+        u_integral,
+      </if>
+      <if test="uEmail != null" >
+        u_email,
+      </if>
+      <if test="uSum != null" >
+        u_sum,
+      </if>
+      <if test="uRank != null" >
+        u_rank,
+      </if>
+      <if test="groupId != null" >
+        group_id,
+      </if>
+      <if test="uDate != null" >
+        u_date,
+      </if>
+      <if test="uContent != null" >
+        u_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="uName != null" >
+        #{uName,jdbcType=VARCHAR},
+      </if>
+      <if test="uUsername != null" >
+        #{uUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="uPassword != null" >
+        #{uPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="uImage != null" >
+        #{uImage,jdbcType=VARCHAR},
+      </if>
+      <if test="uIntegral != null" >
+        #{uIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="uEmail != null" >
+        #{uEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="uSum != null" >
+        #{uSum,jdbcType=INTEGER},
+      </if>
+      <if test="uRank != null" >
+        #{uRank,jdbcType=INTEGER},
+      </if>
+      <if test="groupId != null" >
+        #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="uDate != null" >
+        #{uDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="uContent != null" >
+        #{uContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="pro.model.User" >
+    update user
+    <set >
+      <if test="uName != null" >
+        u_name = #{uName,jdbcType=VARCHAR},
+      </if>
+      <if test="uUsername != null" >
+        u_username = #{uUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="uPassword != null" >
+        u_password = #{uPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="uImage != null" >
+        u_image = #{uImage,jdbcType=VARCHAR},
+      </if>
+      <if test="uIntegral != null" >
+        u_integral = #{uIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="uEmail != null" >
+        u_email = #{uEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="uSum != null" >
+        u_sum = #{uSum,jdbcType=INTEGER},
+      </if>
+      <if test="uRank != null" >
+        u_rank = #{uRank,jdbcType=INTEGER},
+      </if>
+      <if test="groupId != null" >
+        group_id = #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="uDate != null" >
+        u_date = #{uDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="uContent != null" >
+        u_content = #{uContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where u_id = #{uId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="pro.model.User" >
+    update user
+    set u_name = #{uName,jdbcType=VARCHAR},
+      u_username = #{uUsername,jdbcType=VARCHAR},
+      u_password = #{uPassword,jdbcType=VARCHAR},
+      u_image = #{uImage,jdbcType=VARCHAR},
+      u_integral = #{uIntegral,jdbcType=INTEGER},
+      u_email = #{uEmail,jdbcType=VARCHAR},
+      u_sum = #{uSum,jdbcType=INTEGER},
+      u_rank = #{uRank,jdbcType=INTEGER},
+      group_id = #{groupId,jdbcType=INTEGER},
+      u_date = #{uDate,jdbcType=TIMESTAMP},
+      u_content = #{uContent,jdbcType=LONGVARCHAR}
+    where u_id = #{uId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pro.model.User" >
+    update user
+    set u_name = #{uName,jdbcType=VARCHAR},
+      u_username = #{uUsername,jdbcType=VARCHAR},
+      u_password = #{uPassword,jdbcType=VARCHAR},
+      u_image = #{uImage,jdbcType=VARCHAR},
+      u_integral = #{uIntegral,jdbcType=INTEGER},
+      u_email = #{uEmail,jdbcType=VARCHAR},
+      u_sum = #{uSum,jdbcType=INTEGER},
+      u_rank = #{uRank,jdbcType=INTEGER},
+      group_id = #{groupId,jdbcType=INTEGER},
+      u_date = #{uDate,jdbcType=TIMESTAMP}
+    where u_id = #{uId,jdbcType=INTEGER}
+  </update>
+</mapper>

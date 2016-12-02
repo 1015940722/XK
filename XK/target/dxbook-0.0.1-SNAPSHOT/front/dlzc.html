@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+    <script>
+		var s1 = 1;
+		var s2 = 1;
+		var s3 = 1;
+		var s4 = 1;
+    </script>
+<style>
+*{
+	margin:0px;
+    padding:0px;
+	font-family:微软雅黑;
+	color:#000;
+	margin:0px auto;
+	font-size:12px;
+}
+.banner{
+	height:100px;
+	width:100%;
+	background-color:#5e5e5e;
+	color:#fff;
+	font-size:20px;
+}
+.main{
+	width:100%;
+	height:100%;
+	min-height:1200px;
+	z-index:1;
+	background:rgba(48,58,68,0.8);
+}
+.liubai{
+	width:100%;
+	height:35px;
+}
+.content{
+	width:646px;
+	height:592px;
+	margin:0px auto;
+}
+.left{
+	width:145px;
+	height:592px;
+	float:left;
+	z-index:2;
+}
+.left1{
+	width:145px;
+	height:57px;
+	background:#fff;
+	border-radius:0px 25px;
+	-webkit-border-radius:0px 25px;
+    -moz-border-radius:0px 25px;
+	text-align:center;
+	font-size:20px;
+	line-height:57px;
+	color:#898C91;
+	margin-top:80px;
+}
+.left2{
+	width:145px;
+	height:57px;
+	background:#fff;
+	border-radius:0px 25px;
+	-webkit-border-radius:0px 25px;
+    -moz-border-radius:0px 25px;
+	text-align:center;
+	font-size:20px;
+	line-height:57px;
+	color:#898C91;
+	margin-top:17px;
+}
+.right{
+	width:500px;
+	height:630px;
+	margin-left:146px;
+	background:rgba(255,255,255,1);
+	border-radius:10px;
+	-webkit-border-radius:10px;
+    -moz-border-radius:10px;}
+.right-top{
+	width:500px;
+	height:100px;
+	border-radius:10px 10px 0px 0px;
+	-webkit-border-radius:10px 10px 0px 0px;
+    -moz-border-radius:10px 10px 0px 0px;
+	background:rgba(40,139,230,1);
+	font-size:20px;
+	line-height:100px;
+	text-align:center;
+	color:#fff;
+}
+.white1{
+	width:500px;
+	height:20px;
+}
+.title{
+	width:500px;
+	height:20px;
+	font-size:20px;
+	text-align:center;
+	color:#333742;
+	line-height:20px;
+}
+.white2{
+	width:500px;
+	height:30px;
+}
+.input{
+	width:425px;
+	height:50px;
+	border:1px #ccc solid;
+	margin:0px auto 20px auto;
+}
+.input2{
+	width:425px;
+	height:50px;
+	border:1px #ccc solid;
+	margin:0px auto 30px auto;
+}
+.input1{
+	width:340px;
+	height:50px;
+	border:0px;
+	margin-left:28px;
+	font-size:18px;
+	line-height:50px;
+}
+.slt{
+	height:50px;
+	width:390px;
+	margin-left:23px;
+	border:0px;
+	font-size:18px;
+	padding:10px 0px;
+}
+.xiala{
+	height:50px;
+	width:30px;
+	position:absolute;
+	left:929px;
+	top:378px;
+	background:#fff;
+}
+.opt{
+    height: 20px;
+    font-size: 18px;
+    padding: 20px 0px;
+}
+.button1{
+	width:425px;
+	height:50px;
+	border:0px;
+	margin:0px auto 20px auto;
+	background:#008c00;
+	color:#fff;
+	font-size:20px;
+	text-align:center;
+	line-height:50px;
+	font-weight:bold;
+}
+.right2{
+	width:500px;
+	height:530px;
+	margin-left:146px;
+	background:rgba(255,255,255,1);
+	border-radius:10px;
+	-webkit-border-radius:10px;
+    -moz-border-radius:10px;
+	display:none;
+}
+.check{
+	width:85px;
+	height:18px;
+	color:#A2A3A7;
+	font-size:14px;
+	margin-right:30px;
+	line-height:18px;
+	margin-bottom:30px;
+}
+.check2{
+	width:17px;
+	height:17px;
+	float:left;
+	margin-top:2px;
+}
+.error1{
+	width:252px;
+	height:50px;
+	position:absolute;
+	left:740px;
+	top:293px;
+	display:none;
+}
+.error1-top{
+	width:250px;
+	height:20px;
+	border:1px #D92822 solid;
+	border-radius:3px;
+	-webkit-border-radius:3px;
+    -moz-border-radius:3px;
+	color:#D92822;
+	background:#FFF;
+	text-align:center;
+	line-height:20px;
+}
+.error1-tag{
+	width:19px;
+	height:11px;
+	float:right;
+	margin-top:-1px;
+	margin-right:45px;
+	background:url(images/small_button.jpg);
+}
+.xx{
+	width:13px;
+	height:13px;
+	margin-top:13px;
+	margin-right:47px;
+	background:url(images/xx.jpg);
+}
+.true1{
+	width:19px;
+	height:13px;
+	position:absolute;
+	left:930px;
+	top:328px;
+	background:url(images/gougou.jpg);
+	display:none;
+}
+.error2{
+	width:252px;
+	height:50px;
+	position:absolute;
+	left:740px;
+	top:437px;
+	display:none;
+}
+.true2{
+	width:19px;
+	height:13px;
+	position:absolute;
+	left:930px;
+	top:472px;
+	background:url(images/gougou.jpg);
+	display:none;
+}
+.error3{
+	width:252px;
+	height:50px;
+	position:absolute;
+	left:740px;
+	top:510px;
+	display:none;
+}
+.true3{
+	width:19px;
+	height:13px;
+	position:absolute;
+	left:930px;
+	top:545px;
+	background:url(images/gougou.jpg);
+	display:none;
+}
+.error4{
+	width:252px;
+	height:50px;
+	position:absolute;
+	left:740px;
+	top:582px;
+	display:none;
+}
+.true4{
+	width:19px;
+	height:13px;
+	position:absolute;
+	left:930px;
+	top:617px;
+	background:url(images/gougou.jpg);
+	display:none;
+}
+</style>
+</head>
+<body>
+	<div class="banner">
+    	<div class="banner" style="width:100%;height:100px;background:#303a44;opacity:0.8;position:absolute;left:0px;top:0px;"></div>
+    </div>
+    <div class="main">
+    	<div class="liubai"></div>
+    	<div class="content">
+        	<div class="left">
+            	<div class="left1" id="login">登录
+                </div>
+                <div class="left2" id="zhuce">注册
+                </div>
+            </div>
+            <div class="right" id="right">
+            	<div class="right-top">LOGO
+                </div>
+                <div class="white1"></div>
+                <div class="title">注册新用户</div>
+                <div class="white2"></div>
+                <form>
+                	<div class="input"><input type="text" id="user" name="username" class="input1" placeholder="用户名（5-18位数字、字母或汉字的组合）"/>
+                    	<div class="error1" id="error1">
+                        	<div class="error1-top" id="error1-top">的傻大姐萨达</div>
+                            <div class="error1-tag"></div>
+                            <div class="xx"></div>
+                        </div>
+                        <div class="true1" id="true1"></div>
+                    </div>
+                    <div class="input"><div class="xiala"></div><select class="slt" >
+                    	<option value="1" class="opt">学生</option>
+                        <option value="2" class="opt">教师</option></select>
+                    </div>
+                    <div class="input"><input type="password" id="psd" name="password"class="input1" placeholder="密码（6-18位数字、字母或符号的组合）"/>
+                    	<div class="error2" id="error2">
+                        	<div class="error1-top">密码（6-18位数字、字母或符号的组合）</div>
+                            <div class="error1-tag"></div>
+                            <div class="xx"></div>
+                        </div>
+                        <div class="true2" id="true2"></div>
+                    </div>
+                    <div class="input"><input type="password" id="psd2" class="input1" placeholder="再次输入密码"/>
+                    	<div class="error3" id="error3">
+                        	<div class="error1-top">密码与上次输入不一样</div>
+                            <div class="error1-tag"></div>
+                            <div class="xx"></div>
+                        </div>
+                        <div class="true3" id="true3"></div>
+                    </div>
+                    <div class="input"><input type="text" class="input1" id="email" placeholder="请输入邮箱"/>
+                    	<div class="error4" id="error4">
+                        	<div class="error1-top">请输入正确的邮箱格式 例如XX@aa.com</div>
+                            <div class="error1-tag"></div>
+                            <div class="xx"></div>
+                        </div>
+                        <div class="true4" id="true4"></div>
+                    </div>
+                    <div class="button1"><button class="button1">快速注册</button></div>
+                </form>
+            </div>
+            <div class="right2" id="right2">
+            	<div class="right-top">LOGO
+                </div>
+                <div class="white1"></div>
+                <div class="title">登录账户</div>
+                <div class="white2"></div>
+                <form>
+                	<div class="input2"><input type="text" class="input1" placeholder="用户名"/></div>
+                    <div class="input2"><input type="password" class="input1" placeholder="密码"/></div>
+                    <div class="check"><input type="checkbox" class="check2"/>&nbsp;记住密码</div>
+                    <div class="button1"><button class="button1">登录</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+	var right = document.getElementById("right");
+	var right2 = document.getElementById("right2")
+	document.getElementById("login").onclick = function(){
+		right.style.display = 'none';
+		right2.style.display = 'block';
+	}
+	document.getElementById("zhuce").onclick = function(){
+		right.style.display = 'block';
+		right2.style.display = 'none';
+	}
+</script>
+<script>
+	var user = document.getElementById("user");
+	var psd = document.getElementById("psd");
+	var psd2 = document.getElementById("psd2");
+	var email = document.getElementById("email");
+	var emailp = /^\w+[@]\w+[.]\w{2,4}$/;
+	var userp = /[\w\u4E00-\u9FA5]{3,18}/;
+	user.onclick = function(){
+		document.getElementById("true1").style.display = 'none';
+		document.getElementById("error1").style.display = 'none';
+	}
+	psd.onclick = function(){
+		document.getElementById("true2").style.display = 'none';
+		document.getElementById("error2").style.display = 'none';
+	}
+	psd2.onclick = function(){
+		document.getElementById("true3").style.display = 'none';
+		document.getElementById("error3").style.display = 'none';
+	}
+	email.onclick = function(){
+		document.getElementById("true4").style.display = 'none';
+		document.getElementById("error4").style.display = 'none';
+	}
+	user.onblur = function(){
+		if(userp.test(user.value)){//str.replace(/[^\u4e00-\u9fa5]/gi,"")
+			var ls = user.value.replace(/[^\u4e00-\u9fa5]/gi,"");
+			if(user.value.length+ls.length<=18&&user.value.length+ls.length>=5){
+				document.getElementById("true1").style.display = 'block';
+				s1 = 0;
+			}else{document.getElementById("error1").style.display = 'block';}
+		}else{
+			document.getElementById("error1-top").innerHTML ='用户名（5-18位数字、字母或汉字的组合）';
+			document.getElementById("error1").style.display = 'block';
+		}
+	}
+	psd.onblur = function(){
+		if(/[\x21-\x7E\%]{6,18}/.test(psd.value)){
+			document.getElementById("true2").style.display = 'block';
+			s2 = 0;
+		}else{document.getElementById("error2").style.display = 'block';}
+	}
+	psd2.onblur = function(){
+		if(psd2.value===psd.value){
+			document.getElementById("true3").style.display = 'block';
+			s3 = 0;
+		}else{document.getElementById("error3").style.display = 'block';}
+	}
+	email.onblur = function(){
+		if(emailp.test(email.value)){
+			document.getElementById("true4").style.display = 'block';
+			s4 = 0;
+		}else{document.getElementById("error4").style.display = 'block';}
+	}
+</script>
+</html>
